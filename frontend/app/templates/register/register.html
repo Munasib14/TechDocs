@@ -1,0 +1,5 @@
+{% if isAuthenticated %}
+  {% include 'dashboard-layout.html' %}
+{% else %}
+  {% include 'marketing-layout.html' %}
+{% endif %}

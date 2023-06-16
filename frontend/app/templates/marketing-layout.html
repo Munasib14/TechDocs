@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block layoutCss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/marketing-layout.css') }}">
+{% block pageCss %}{% endblock%}
+{% endblock %}
+
+{% block layout %}
+{% include "nav-bar.html" %}
+
+<main class="container-fluid body-main">
+  {% block body %}{% endblock %}
+</main>
+
+<div class="container">
+  <!--placeholder to add space for footer-->
+  <div class="form-floating mt-6 mb-6 pb-3 pt-3">
+    <span class="text-light bg-light">*</span>
+    </div>
+    </div>
+<footer class="footer bd-blue-400">
+  <div class="container">
+    <div class="grid">
+      <span class="text-muted">&copy; TechDocs</span> &nbsp;&nbsp;
+    </div>
+
+  </div>
+</footer>
+
+{% endblock %}
+
+{% block layoutJS %}
+<script>
+  function redirectToLogin() {
+    window.location = "{{url_for('login')}}";
+  }
+</script>
+{% block pageJS %}{% endblock%}
+
+{% endblock %}
